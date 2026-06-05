@@ -1,0 +1,209 @@
+# ============================================
+# Sphoon'sSMPutils Main Configuration
+# ============================================
+
+# Plugin Settings
+plugin:
+  debug: false
+  check-updates: true
+
+# ============================================
+# ENCHANTMENTS LIMITER
+# ============================================
+enchantments:
+  enabled: true
+  
+  # Define enchantment limits per level (GLOBAL - applies to all items)
+  limits:
+    # Protection enchantments
+    protection:
+      max-level: 4
+    fire_protection:
+      max-level: 4
+    feather_falling:
+      max-level: 4
+    blast_protection:
+      max-level: 4
+    projectile_protection:
+      max-level: 4
+      
+    # Weapon enchantments
+    sharpness:
+      max-level: 5
+    smite:
+      max-level: 5
+    bane_of_arthropods:
+      max-level: 5
+    knockback:
+      max-level: 2
+    fire_aspect:
+      max-level: 2
+    looting:
+      max-level: 3
+      
+    # Tool enchantments
+    efficiency:
+      max-level: 5
+    silk_touch:
+      max-level: 1
+    unbreaking:
+      max-level: 3
+    fortune:
+      max-level: 3
+      
+    # Bow/Crossbow enchantments
+    power:
+      max-level: 5
+    punch:
+      max-level: 2
+    infinity:
+      max-level: 1
+    flame:
+      max-level: 1
+
+  # Define item-specific enchantment limits
+  # These OVERRIDE global limits for specific items
+  item-specific:
+    # Example: diamond_chestplate can only have Protection III
+    # diamond_chestplate:
+    #   protection: 3
+    #   unbreaking: 2
+    #
+    # Example: diamond_pickaxe can only have Efficiency IV
+    # diamond_pickaxe:
+    #   efficiency: 4
+    #   silk_touch: 1
+    #   unbreaking: 2
+    
+  # Messages
+  messages:
+    prefix: "&6[Enchantments]&r "
+    enchant-limited: "&cThat enchantment exceeds the maximum level of %max%!"
+    reload: "&aEnchantments configuration reloaded."
+
+# ============================================
+# ITEMS LIMITER
+# ============================================
+items:
+  enabled: true
+  
+  # Set limits for specific items (use Material names)
+  # Use 0 to completely ban an item
+  limits:
+    ender_pearl: 16
+    totem_of_undying: 1
+    golden_apple: 32
+    enchanted_golden_apple: 5
+    diamond: 64
+    netherite_ingot: 32
+    dragon_egg: 0  # 0 = banned
+    
+  # Messages
+  messages:
+    prefix: "&6[Items]&r "
+    limit-exceeded: "&cYou cannot carry more than %limit% %item%!"
+    item-banned: "&cThe item %item% is banned on this server!"
+    reload: "&aItems configuration reloaded."
+
+# ============================================
+# POTION LIMITER
+# ============================================
+potions:
+  enabled: true
+  
+  # Configure potion brewing limits
+  limits:
+    strength:
+      max-level: 2
+    speed:
+      max-level: 2
+    haste:
+      max-level: 2
+    resistance:
+      max-level: 1
+    regeneration:
+      max-level: 2
+    invisibility:
+      max-level: 1
+    night_vision:
+      max-level: 1
+    luck:
+      max-level: 1
+    
+  # Extended duration limits
+  duration-limit:
+    enabled: true
+    max-minutes: 60
+    
+  # Messages
+  messages:
+    prefix: "&6[Potions]&r "
+    potion-banned: "&cThat potion cannot be brewed!"
+    duration-too-long: "&cPotion duration cannot exceed %max% minutes!"
+    reload: "&aPotion configuration reloaded."
+
+# ============================================
+# MULTIMACE
+# ============================================
+maces:
+  enabled: true
+  
+  # Maximum number of maces allowed on server
+  allowed-maces: 3
+  
+  # Allow enchanting maces
+  allow-mace-enchanting: true
+  
+  # Prevent maces from being placed in containers
+  prevent-container-storage: true
+  
+  # Messages
+  messages:
+    prefix: "&6[Maces]&r "
+    crafted-broadcast: "&a%player% &7crafted &f%amount%&7 mace(s)! &7(%current%/%max%)"
+    destroyed-broadcast: "&cA mace was destroyed! &7(last held by &f%lastHolder%&7) &7(%current%/%max%)"
+    containers-blocked: "&cYou can't put the mace in any container."
+    limit-reached: "&cMace limit reached. A mace must be destroyed before another can be crafted."
+    illegal-removed: "&cAn illegal/untracked mace was removed."
+    reload: "&aMultiMace config reloaded."
+    no-permission: "&cYou don't have permission."
+
+# ============================================
+# INSTANT RESTOCK
+# ============================================
+restock:
+  enabled: true
+  
+  # Villager restocking
+  villagers:
+    enabled: true
+    # Instant restock when trading
+    instant: true
+    
+  # Lectern restocking
+  lecterns:
+    enabled: true
+    instant: true
+    
+  # Messages
+  messages:
+    prefix: "&6[Restock]&r "
+    enabled: "&aInstant restocking is now &2enabled&a!"
+    disabled: "&cInstant restocking is now &4disabled&c!"
+    status: "&6Restocking status: %status%"
+
+# ============================================
+# ITEM EDITOR
+# ============================================
+itemedit:
+  enabled: true
+  
+  # Enable GUI for item editing
+  gui-enabled: true
+  
+  # Messages
+  messages:
+    prefix: "&6[ItemEdit]&r "
+    gui-open: "&aItem editor GUI opened!"
+    item-updated: "&aItem successfully updated!"
+    error: "&cAn error occurred while editing the item."

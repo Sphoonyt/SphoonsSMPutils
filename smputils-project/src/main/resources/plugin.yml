@@ -1,0 +1,94 @@
+name: Sphoon'sSMPutils
+version: '1.0.0'
+main: me.sphoon.smputils.SphoonsSMPutils
+api-version: '1.21'
+authors: [Sphoon]
+website: https://example.com
+description: Unified SMP utility plugin combining enchantments, items, potions, maces, and more
+
+commands:
+  # Enchantments Limiter Commands
+  enchantlimit:
+    description: Manage enchantment limits (global and item-specific)
+    usage: /enchantlimit <set|item|remove|item-remove|list|item-list|reload> [args]
+    permission: smputils.enchant.admin
+    
+  # Items Limiter Commands
+  itemcap:
+    description: Manage item capacity limits
+    usage: /itemcap <set|remove|list|reload|gui> [args]
+    permission: smputils.items.admin
+    
+  # Potion Limiter Commands
+  potionlimit:
+    description: Manage potion limits
+    usage: /potionlimit <set|remove|list|reload> [args]
+    permission: smputils.potion.admin
+    
+  # MultiMace Commands
+  maces:
+    description: View tracked maces or reload mace config
+    usage: /maces [reload|list]
+    permission: smputils.mace.admin
+    
+  getuntrackedmace:
+    description: Get an untracked mace that bypasses the mace limit
+    usage: /getuntrackedmace
+    permission: smputils.mace.untracked
+    
+  clearuntrackedmaces:
+    description: Clear all untracked maces
+    usage: /clearuntrackedmaces
+    permission: smputils.mace.clear
+    
+  # InstaRestock Commands
+  restock:
+    description: Manage instant restocking
+    usage: /restock <enable|disable|status|reload>
+    permission: smputils.restock.admin
+    
+  # ItemEdit Commands
+  itemedit:
+    description: Edit items
+    usage: /itemedit
+    permission: smputils.itemedit.use
+
+permissions:
+  # Enchantments Limiter Permissions
+  smputils.enchant.admin:
+    description: Manage enchantment limits
+    default: op
+    
+  # Items Limiter Permissions
+  smputils.items.admin:
+    description: Manage item capacity limits
+    default: op
+  smputils.items.bypass:
+    description: Bypass item limits
+    default: false
+    
+  # Potion Limiter Permissions
+  smputils.potion.admin:
+    description: Manage potion limits
+    default: op
+    
+  # MultiMace Permissions
+  smputils.mace.admin:
+    description: Manage mace settings
+    default: op
+  smputils.mace.untracked:
+    description: Get untracked maces
+    default: op
+  smputils.mace.clear:
+    description: Clear untracked maces
+    default: op
+    
+  # InstaRestock Permissions
+  smputils.restock.admin:
+    description: Manage restocking
+    default: op
+    
+  # ItemEdit Permissions
+  smputils.itemedit.use:
+    description: Use item editor
+    default: op
